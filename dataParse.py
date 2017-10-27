@@ -60,6 +60,7 @@ for date in uDates:
 dateFilings = pd.DataFrame(dateFilings, columns = ['Date', 'datetime', 'No of Filings', 'Unique Filers'])    
 dateFilings = dateFilings.sort_values('datetime', ascending=True)    
 ind = np.arange(0,len(dateFilings))
+plt.style.use('ggplot')
 plt.bar(ind, dateFilings['No of Filings'].values)
 plt.xticks(ind, dateFilings['Date'].values, rotation= 'vertical')
 plt.xlabel('Date')
